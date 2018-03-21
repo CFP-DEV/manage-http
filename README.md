@@ -73,4 +73,7 @@ request1.appendParam(URL);
 // Set Method
 request1.setMethod('GET');
 
+// Set body
+request1.setBody(data);
+
 ```
