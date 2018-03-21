@@ -1,0 +1,7 @@
+class manageHTTP {
+  constructor (props = {}) {
+
+  }
+
+
+}
