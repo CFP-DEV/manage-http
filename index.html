@@ -8,12 +8,36 @@
 </head>
 <body>
 
+  <button id="send">Send Request</button>
 
-  <script src="manageHTTP.js"></script>
+  <script src="cfphttp.js"></script>
   <script>
   
-  
-  
+  let options = {
+    requestURL: 'http://localhost:5000/users',
+    method: 'POST',
+    headers: [
+      {
+        key: "Content-type", 
+        value: "application/json"
+      }
+    ],
+    body: JSON.stringify({
+      name: 'test',
+      email: 'test',
+      phone: 'test',
+      address: 'test'
+    }),
+  }
+
+  const request1 = new cfphttp(options);
+
+  request1.initRequest();
+
+  document.getElementById('send').addEventListener('click', () => {
+    request1.sendRequest().then(response => response.json()).then(json => console.log(json));
+  });
+
   </script>
 </body>
 </html>
